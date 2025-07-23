@@ -1,0 +1,67 @@
+Step1:
+* identify what business process is being measured
+* identify the grain- what each row will represent
+* identify questions that are trying to be solved
+
+
+All columns and their data types
+
+VendorID                          int64
+tpep_pickup_datetime     datetime64[ns]
+tpep_dropoff_datetime    datetime64[ns]
+passenger_count                   int64
+trip_distance                   float64
+pickup_longitude                float64
+pickup_latitude                 float64
+RatecodeID                        int64
+store_and_fwd_flag               object
+dropoff_longitude               float64
+dropoff_latitude                float64
+payment_type                      int64
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+improvement_surcharge           float64
+total_amount                    float64
+
+
+
+Grouping Similar columns
+
+VendorID                          int64
+
+tpep_pickup_datetime     datetime64[ns]
+tpep_dropoff_datetime    datetime64[ns]
+
+pickup_longitude                float64
+pickup_latitude                 float64
+dropoff_longitude               float64
+dropoff_latitude                float64
+
+RatecodeID                        int64
+
+store_and_fwd_flag               object
+
+payment_type                      int64
+
+trip_distance                   float64
+
+fare_amount                     float64
+extra                           float64
+mta_tax                         float64
+tip_amount                      float64
+tolls_amount                    float64
+improvement_surcharge           float64
+total_amount                    float64
+
+Step2: Identify facts and dimensions
+
+Dimensions and Facts:
+
+Dimensions:
+dim_vendor, dim_datetime, dim_location, dim_ratecode, dim_store_and_fwd_flag, dim_payment_type, dim_trip_distance
+
+Facts:
+fact_trip_amount
