@@ -1,0 +1,344 @@
+2025-08-17 16:28:03,178 - __main__ - DEBUG - Starting the ETL process
+2025-08-17 16:28:03,181 - __main__ - DEBUG - Executing function read_csv....
+2025-08-17 16:28:03,950 - __main__ - INFO - CSV file read successfully of rows 100000 and columns 19
+2025-08-17 16:28:03,957 - __main__ - DEBUG - Executing function datetime_conversion...
+2025-08-17 16:28:04,037 - __main__ - INFO - Column tpep_pickup_datetime converted to datetime
+2025-08-17 16:28:04,134 - __main__ - INFO - Column tpep_dropoff_datetime converted to datetime
+2025-08-17 16:28:04,136 - __main__ - DEBUG - Completed executing function datetime_conversion
+2025-08-17 16:28:04,137 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,187 - __main__ - DEBUG - Initial Memory Usage: 18.50 MB
+2025-08-17 16:28:04,195 - __main__ - DEBUG - Column VendorID changed from int64 to int8
+2025-08-17 16:28:04,203 - __main__ - DEBUG - Column passenger_count changed from int64 to int8
+2025-08-17 16:28:04,214 - __main__ - DEBUG - Column trip_distance changed from float64 to float32
+2025-08-17 16:28:04,220 - __main__ - DEBUG - Column pickup_longitude changed from float64 to float32
+2025-08-17 16:28:04,227 - __main__ - DEBUG - Column pickup_latitude changed from float64 to float32
+2025-08-17 16:28:04,234 - __main__ - DEBUG - Column RatecodeID changed from int64 to int8
+2025-08-17 16:28:04,263 - __main__ - DEBUG - Column store_and_fwd_flag changed from object to category
+2025-08-17 16:28:04,269 - __main__ - DEBUG - Column dropoff_longitude changed from float64 to float32
+2025-08-17 16:28:04,274 - __main__ - DEBUG - Column dropoff_latitude changed from float64 to float32
+2025-08-17 16:28:04,281 - __main__ - DEBUG - Column payment_type changed from int64 to int8
+2025-08-17 16:28:04,287 - __main__ - DEBUG - Column fare_amount changed from float64 to float32
+2025-08-17 16:28:04,294 - __main__ - DEBUG - Column extra changed from float64 to float32
+2025-08-17 16:28:04,299 - __main__ - DEBUG - Column mta_tax changed from float64 to float32
+2025-08-17 16:28:04,306 - __main__ - DEBUG - Column tip_amount changed from float64 to float32
+2025-08-17 16:28:04,312 - __main__ - DEBUG - Column tolls_amount changed from float64 to float32
+2025-08-17 16:28:04,321 - __main__ - DEBUG - Column improvement_surcharge changed from float64 to float32
+2025-08-17 16:28:04,328 - __main__ - DEBUG - Column total_amount changed from float64 to float32
+2025-08-17 16:28:04,333 - __main__ - INFO - Memory Usage after Optimization: 6.58 MB, reduction of 64.43%
+2025-08-17 16:28:04,335 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,336 - __main__ - DEBUG - Executing function creating_dimensions...
+2025-08-17 16:28:04,347 - __main__ - DEBUG - Dimension dim_vendor created with columns ['dim_vendor_key', 'VendorID'] of 2 rows and 2 columns
+2025-08-17 16:28:04,597 - __main__ - DEBUG - Dimension dim_datetime created with columns ['dim_datetime_key', 'full_datetime'] of 47007 rows and 2 columns
+2025-08-17 16:28:04,645 - __main__ - DEBUG - Dimension dim_pickup_location created with columns ['dim_pickup_location_key', 'pickup_latitude', 'pickup_longitude'] of 98055 rows and 3 columns
+2025-08-17 16:28:04,692 - __main__ - DEBUG - Dimension dim_dropoff_location created with columns ['dim_dropoff_location_key', 'dropoff_latitude', 'dropoff_longitude'] of 98417 rows and 3 columns
+2025-08-17 16:28:04,703 - __main__ - DEBUG - Dimension dim_ratecode created with columns ['dim_ratecode_key', 'RatecodeID'] of 6 rows and 2 columns
+2025-08-17 16:28:04,714 - __main__ - DEBUG - Dimension dim_payment_type created with columns ['dim_payment_type_key', 'payment_type'] of 4 rows and 2 columns
+2025-08-17 16:28:04,716 - __main__ - DEBUG - Completed executing function creating_dimensions with 6 dimensions created
+2025-08-17 16:28:04,720 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,724 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 16:28:04,729 - __main__ - DEBUG - Column dim_vendor_key changed from int64 to int8
+2025-08-17 16:28:04,733 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 77.78%
+2025-08-17 16:28:04,736 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,744 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,749 - __main__ - DEBUG - Initial Memory Usage: 0.72 MB
+2025-08-17 16:28:04,763 - __main__ - DEBUG - Column dim_datetime_key changed from int64 to int32
+2025-08-17 16:28:04,766 - __main__ - INFO - Memory Usage after Optimization: 0.54 MB, reduction of 25.00%
+2025-08-17 16:28:04,770 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,773 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,779 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 16:28:04,799 - __main__ - DEBUG - Column dim_pickup_location_key changed from int64 to int32
+2025-08-17 16:28:04,804 - __main__ - INFO - Memory Usage after Optimization: 1.12 MB, reduction of 25.00%
+2025-08-17 16:28:04,809 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,811 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,816 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 16:28:04,827 - __main__ - DEBUG - Column dim_dropoff_location_key changed from int64 to int32
+2025-08-17 16:28:04,831 - __main__ - INFO - Memory Usage after Optimization: 1.13 MB, reduction of 25.00%
+2025-08-17 16:28:04,834 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,837 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,839 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 16:28:04,843 - __main__ - DEBUG - Column dim_ratecode_key changed from int64 to int8
+2025-08-17 16:28:04,845 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 77.78%
+2025-08-17 16:28:04,847 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,851 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 16:28:04,854 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 16:28:04,858 - __main__ - DEBUG - Column dim_payment_type_key changed from int64 to int8
+2025-08-17 16:28:04,860 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 77.78%
+2025-08-17 16:28:04,862 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 16:28:04,865 - __main__ - DEBUG - Optimized dimensions created: [(2, 2), (47007, 2), (98055, 3), (98417, 3), (6, 2), (4, 2)]
+2025-08-17 17:40:57,500 - __main__ - DEBUG - Starting the ETL process
+2025-08-17 17:40:57,506 - __main__ - DEBUG - Executing function read_csv....
+2025-08-17 17:40:58,099 - __main__ - INFO - CSV file read successfully of rows 100000 and columns 19
+2025-08-17 17:40:58,123 - __main__ - DEBUG - Executing function datetime_conversion...
+2025-08-17 17:40:58,281 - __main__ - INFO - Column tpep_pickup_datetime converted to datetime
+2025-08-17 17:40:58,334 - __main__ - INFO - Column tpep_dropoff_datetime converted to datetime
+2025-08-17 17:40:58,334 - __main__ - DEBUG - Completed executing function datetime_conversion
+2025-08-17 17:40:58,336 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,370 - __main__ - DEBUG - Initial Memory Usage: 18.50 MB
+2025-08-17 17:40:58,388 - __main__ - DEBUG - Column VendorID changed from int64 to int8
+2025-08-17 17:40:58,394 - __main__ - DEBUG - Column passenger_count changed from int64 to int8
+2025-08-17 17:40:58,402 - __main__ - DEBUG - Column trip_distance changed from float64 to float32
+2025-08-17 17:40:58,408 - __main__ - DEBUG - Column pickup_longitude changed from float64 to float32
+2025-08-17 17:40:58,412 - __main__ - DEBUG - Column pickup_latitude changed from float64 to float32
+2025-08-17 17:40:58,415 - __main__ - DEBUG - Column RatecodeID changed from int64 to int8
+2025-08-17 17:40:58,430 - __main__ - DEBUG - Column store_and_fwd_flag changed from object to category
+2025-08-17 17:40:58,433 - __main__ - DEBUG - Column dropoff_longitude changed from float64 to float32
+2025-08-17 17:40:58,436 - __main__ - DEBUG - Column dropoff_latitude changed from float64 to float32
+2025-08-17 17:40:58,439 - __main__ - DEBUG - Column payment_type changed from int64 to int8
+2025-08-17 17:40:58,444 - __main__ - DEBUG - Column fare_amount changed from float64 to float32
+2025-08-17 17:40:58,447 - __main__ - DEBUG - Column extra changed from float64 to float32
+2025-08-17 17:40:58,450 - __main__ - DEBUG - Column mta_tax changed from float64 to float32
+2025-08-17 17:40:58,455 - __main__ - DEBUG - Column tip_amount changed from float64 to float32
+2025-08-17 17:40:58,459 - __main__ - DEBUG - Column tolls_amount changed from float64 to float32
+2025-08-17 17:40:58,462 - __main__ - DEBUG - Column improvement_surcharge changed from float64 to float32
+2025-08-17 17:40:58,467 - __main__ - DEBUG - Column total_amount changed from float64 to float32
+2025-08-17 17:40:58,468 - __main__ - INFO - Memory Usage after Optimization: 6.58 MB, reduction of 64.43%
+2025-08-17 17:40:58,470 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,471 - __main__ - DEBUG - Executing function creating_dimensions...
+2025-08-17 17:40:58,492 - __main__ - DEBUG - Dimension dim_vendor created with columns ['dim_vendor_key', 'VendorID', 'vendor_name'] of 2 rows and 3 columns
+2025-08-17 17:40:58,593 - __main__ - DEBUG - Dimension dim_datetime created with columns ['dim_datetime_key', 'full_datetime'] of 47007 rows and 2 columns
+2025-08-17 17:40:58,615 - __main__ - DEBUG - Dimension dim_pickup_location created with columns ['dim_pickup_location_key', 'pickup_latitude', 'pickup_longitude'] of 98055 rows and 3 columns
+2025-08-17 17:40:58,630 - __main__ - DEBUG - Dimension dim_dropoff_location created with columns ['dim_dropoff_location_key', 'dropoff_latitude', 'dropoff_longitude'] of 98417 rows and 3 columns
+2025-08-17 17:40:58,635 - __main__ - DEBUG - Dimension dim_ratecode created with columns ['dim_ratecode_key', 'RatecodeID', 'ratecode_description'] of 6 rows and 3 columns
+2025-08-17 17:40:58,639 - __main__ - DEBUG - Dimension dim_payment_type created with columns ['dim_payment_type_key', 'payment_type', 'payment_type_description'] of 4 rows and 3 columns
+2025-08-17 17:40:58,640 - __main__ - DEBUG - Completed executing function creating_dimensions with 6 dimensions created
+2025-08-17 17:40:58,641 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,642 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:40:58,643 - __main__ - DEBUG - Column dim_vendor_key changed from int64 to int8
+2025-08-17 17:40:58,645 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 8.38%
+2025-08-17 17:40:58,646 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,647 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,648 - __main__ - DEBUG - Initial Memory Usage: 0.72 MB
+2025-08-17 17:40:58,668 - __main__ - DEBUG - Column dim_datetime_key changed from int64 to int32
+2025-08-17 17:40:58,670 - __main__ - INFO - Memory Usage after Optimization: 0.54 MB, reduction of 25.00%
+2025-08-17 17:40:58,671 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,672 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,674 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:40:58,702 - __main__ - DEBUG - Column dim_pickup_location_key changed from int64 to int32
+2025-08-17 17:40:58,704 - __main__ - INFO - Memory Usage after Optimization: 1.12 MB, reduction of 25.00%
+2025-08-17 17:40:58,706 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,707 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,708 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:40:58,715 - __main__ - DEBUG - Column dim_dropoff_location_key changed from int64 to int32
+2025-08-17 17:40:58,716 - __main__ - INFO - Memory Usage after Optimization: 1.13 MB, reduction of 25.00%
+2025-08-17 17:40:58,717 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,718 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,720 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:40:58,721 - __main__ - DEBUG - Column dim_ratecode_key changed from int64 to int8
+2025-08-17 17:40:58,723 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.53%
+2025-08-17 17:40:58,724 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,725 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:40:58,726 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:40:58,728 - __main__ - DEBUG - Column dim_payment_type_key changed from int64 to int8
+2025-08-17 17:40:58,731 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.65%
+2025-08-17 17:40:58,732 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:40:58,733 - __main__ - DEBUG - Optimized dimensions created: [(2, 3), (47007, 2), (98055, 3), (98417, 3), (6, 3), (4, 3)]
+2025-08-17 17:48:49,546 - __main__ - DEBUG - Starting the ETL process
+2025-08-17 17:48:49,549 - __main__ - DEBUG - Executing function read_csv....
+2025-08-17 17:48:49,935 - __main__ - INFO - CSV file read successfully of rows 100000 and columns 19
+2025-08-17 17:48:49,942 - __main__ - DEBUG - Executing function datetime_conversion...
+2025-08-17 17:48:49,989 - __main__ - INFO - Column tpep_pickup_datetime converted to datetime
+2025-08-17 17:48:50,033 - __main__ - INFO - Column tpep_dropoff_datetime converted to datetime
+2025-08-17 17:48:50,034 - __main__ - DEBUG - Completed executing function datetime_conversion
+2025-08-17 17:48:50,035 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,072 - __main__ - DEBUG - Initial Memory Usage: 18.50 MB
+2025-08-17 17:48:50,078 - __main__ - DEBUG - Column VendorID changed from int64 to int8
+2025-08-17 17:48:50,083 - __main__ - DEBUG - Column passenger_count changed from int64 to int8
+2025-08-17 17:48:50,091 - __main__ - DEBUG - Column trip_distance changed from float64 to float32
+2025-08-17 17:48:50,097 - __main__ - DEBUG - Column pickup_longitude changed from float64 to float32
+2025-08-17 17:48:50,102 - __main__ - DEBUG - Column pickup_latitude changed from float64 to float32
+2025-08-17 17:48:50,107 - __main__ - DEBUG - Column RatecodeID changed from int64 to int8
+2025-08-17 17:48:50,133 - __main__ - DEBUG - Column store_and_fwd_flag changed from object to category
+2025-08-17 17:48:50,140 - __main__ - DEBUG - Column dropoff_longitude changed from float64 to float32
+2025-08-17 17:48:50,143 - __main__ - DEBUG - Column dropoff_latitude changed from float64 to float32
+2025-08-17 17:48:50,149 - __main__ - DEBUG - Column payment_type changed from int64 to int8
+2025-08-17 17:48:50,153 - __main__ - DEBUG - Column fare_amount changed from float64 to float32
+2025-08-17 17:48:50,161 - __main__ - DEBUG - Column extra changed from float64 to float32
+2025-08-17 17:48:50,168 - __main__ - DEBUG - Column mta_tax changed from float64 to float32
+2025-08-17 17:48:50,174 - __main__ - DEBUG - Column tip_amount changed from float64 to float32
+2025-08-17 17:48:50,180 - __main__ - DEBUG - Column tolls_amount changed from float64 to float32
+2025-08-17 17:48:50,187 - __main__ - DEBUG - Column improvement_surcharge changed from float64 to float32
+2025-08-17 17:48:50,194 - __main__ - DEBUG - Column total_amount changed from float64 to float32
+2025-08-17 17:48:50,198 - __main__ - INFO - Memory Usage after Optimization: 6.58 MB, reduction of 64.43%
+2025-08-17 17:48:50,200 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,202 - __main__ - DEBUG - Executing function creating_dimensions...
+2025-08-17 17:48:50,211 - __main__ - DEBUG - Dimension dim_vendor created with columns ['dim_vendor_key', 'VendorID', 'vendor_name'] of 2 rows and 3 columns
+2025-08-17 17:48:50,336 - __main__ - DEBUG - Dimension dim_datetime created with columns ['dim_datetime_key', 'full_datetime'] of 47007 rows and 2 columns
+2025-08-17 17:48:50,386 - __main__ - DEBUG - Dimension dim_pickup_location created with columns ['dim_pickup_location_key', 'pickup_latitude', 'pickup_longitude'] of 98055 rows and 3 columns
+2025-08-17 17:48:50,461 - __main__ - DEBUG - Dimension dim_dropoff_location created with columns ['dim_dropoff_location_key', 'dropoff_latitude', 'dropoff_longitude'] of 98417 rows and 3 columns
+2025-08-17 17:48:50,473 - __main__ - DEBUG - Dimension dim_ratecode created with columns ['dim_ratecode_key', 'RatecodeID', 'ratecode_description'] of 6 rows and 3 columns
+2025-08-17 17:48:50,484 - __main__ - DEBUG - Dimension dim_payment_type created with columns ['dim_payment_type_key', 'payment_type', 'payment_type_description'] of 4 rows and 3 columns
+2025-08-17 17:48:50,485 - __main__ - DEBUG - Completed executing function creating_dimensions with 6 dimensions created
+2025-08-17 17:48:50,488 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,492 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:48:50,495 - __main__ - DEBUG - Column dim_vendor_key changed from int64 to int8
+2025-08-17 17:48:50,498 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 8.38%
+2025-08-17 17:48:50,503 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,505 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,507 - __main__ - DEBUG - Initial Memory Usage: 0.72 MB
+2025-08-17 17:48:50,516 - __main__ - DEBUG - Column dim_datetime_key changed from int64 to int32
+2025-08-17 17:48:50,519 - __main__ - INFO - Memory Usage after Optimization: 0.54 MB, reduction of 25.00%
+2025-08-17 17:48:50,523 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,526 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,528 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:48:50,541 - __main__ - DEBUG - Column dim_pickup_location_key changed from int64 to int32
+2025-08-17 17:48:50,545 - __main__ - INFO - Memory Usage after Optimization: 1.12 MB, reduction of 25.00%
+2025-08-17 17:48:50,547 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,551 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,556 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:48:50,568 - __main__ - DEBUG - Column dim_dropoff_location_key changed from int64 to int32
+2025-08-17 17:48:50,571 - __main__ - INFO - Memory Usage after Optimization: 1.13 MB, reduction of 25.00%
+2025-08-17 17:48:50,573 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,577 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,581 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:48:50,585 - __main__ - DEBUG - Column dim_ratecode_key changed from int64 to int8
+2025-08-17 17:48:50,589 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.53%
+2025-08-17 17:48:50,596 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,598 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:48:50,602 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:48:50,605 - __main__ - DEBUG - Column dim_payment_type_key changed from int64 to int8
+2025-08-17 17:48:50,609 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.65%
+2025-08-17 17:48:50,611 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:48:50,613 - __main__ - DEBUG - Optimized dimensions created: [(2, 3), (47007, 2), (98055, 3), (98417, 3), (6, 3), (4, 3)]
+2025-08-17 17:52:19,595 - __main__ - DEBUG - Starting the ETL process
+2025-08-17 17:52:19,598 - __main__ - DEBUG - Executing function read_csv....
+2025-08-17 17:52:20,287 - __main__ - INFO - CSV file read successfully of rows 100000 and columns 19
+2025-08-17 17:52:20,295 - __main__ - DEBUG - Executing function datetime_conversion...
+2025-08-17 17:52:20,383 - __main__ - INFO - Column tpep_pickup_datetime converted to datetime
+2025-08-17 17:52:20,473 - __main__ - INFO - Column tpep_dropoff_datetime converted to datetime
+2025-08-17 17:52:20,475 - __main__ - DEBUG - Completed executing function datetime_conversion
+2025-08-17 17:52:20,478 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:20,564 - __main__ - DEBUG - Initial Memory Usage: 18.50 MB
+2025-08-17 17:52:20,571 - __main__ - DEBUG - Column VendorID changed from int64 to int8
+2025-08-17 17:52:20,577 - __main__ - DEBUG - Column passenger_count changed from int64 to int8
+2025-08-17 17:52:20,583 - __main__ - DEBUG - Column trip_distance changed from float64 to float32
+2025-08-17 17:52:20,589 - __main__ - DEBUG - Column pickup_longitude changed from float64 to float32
+2025-08-17 17:52:20,596 - __main__ - DEBUG - Column pickup_latitude changed from float64 to float32
+2025-08-17 17:52:20,605 - __main__ - DEBUG - Column RatecodeID changed from int64 to int8
+2025-08-17 17:52:20,634 - __main__ - DEBUG - Column store_and_fwd_flag changed from object to category
+2025-08-17 17:52:20,641 - __main__ - DEBUG - Column dropoff_longitude changed from float64 to float32
+2025-08-17 17:52:20,648 - __main__ - DEBUG - Column dropoff_latitude changed from float64 to float32
+2025-08-17 17:52:20,654 - __main__ - DEBUG - Column payment_type changed from int64 to int8
+2025-08-17 17:52:20,660 - __main__ - DEBUG - Column fare_amount changed from float64 to float32
+2025-08-17 17:52:20,667 - __main__ - DEBUG - Column extra changed from float64 to float32
+2025-08-17 17:52:20,673 - __main__ - DEBUG - Column mta_tax changed from float64 to float32
+2025-08-17 17:52:20,679 - __main__ - DEBUG - Column tip_amount changed from float64 to float32
+2025-08-17 17:52:20,684 - __main__ - DEBUG - Column tolls_amount changed from float64 to float32
+2025-08-17 17:52:20,690 - __main__ - DEBUG - Column improvement_surcharge changed from float64 to float32
+2025-08-17 17:52:20,700 - __main__ - DEBUG - Column total_amount changed from float64 to float32
+2025-08-17 17:52:20,704 - __main__ - INFO - Memory Usage after Optimization: 6.58 MB, reduction of 64.43%
+2025-08-17 17:52:20,706 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:20,709 - __main__ - DEBUG - Executing function creating_dimensions...
+2025-08-17 17:52:20,720 - __main__ - DEBUG - Dimension dim_vendor created with columns ['dim_vendor_key', 'VendorID', 'vendor_name'] of 2 rows and 3 columns
+2025-08-17 17:52:20,909 - __main__ - DEBUG - Dimension dim_datetime created with columns ['dim_datetime_key', 'full_datetime'] of 47007 rows and 2 columns
+2025-08-17 17:52:20,944 - __main__ - DEBUG - Dimension dim_pickup_location created with columns ['dim_pickup_location_key', 'pickup_latitude', 'pickup_longitude'] of 98055 rows and 3 columns
+2025-08-17 17:52:20,979 - __main__ - DEBUG - Dimension dim_dropoff_location created with columns ['dim_dropoff_location_key', 'dropoff_latitude', 'dropoff_longitude'] of 98417 rows and 3 columns
+2025-08-17 17:52:20,989 - __main__ - DEBUG - Dimension dim_ratecode created with columns ['dim_ratecode_key', 'RatecodeID', 'ratecode_description'] of 6 rows and 3 columns
+2025-08-17 17:52:21,003 - __main__ - DEBUG - Dimension dim_payment_type created with columns ['dim_payment_type_key', 'payment_type', 'payment_type_description'] of 4 rows and 3 columns
+2025-08-17 17:52:21,005 - __main__ - DEBUG - Completed executing function creating_dimensions with 6 dimensions created
+2025-08-17 17:52:21,006 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,013 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:52:21,016 - __main__ - DEBUG - Column dim_vendor_key changed from int64 to int8
+2025-08-17 17:52:21,020 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 8.38%
+2025-08-17 17:52:21,022 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,024 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,028 - __main__ - DEBUG - Initial Memory Usage: 0.72 MB
+2025-08-17 17:52:21,036 - __main__ - DEBUG - Column dim_datetime_key changed from int64 to int32
+2025-08-17 17:52:21,039 - __main__ - INFO - Memory Usage after Optimization: 0.54 MB, reduction of 25.00%
+2025-08-17 17:52:21,040 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,042 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,045 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:52:21,054 - __main__ - DEBUG - Column dim_pickup_location_key changed from int64 to int32
+2025-08-17 17:52:21,056 - __main__ - INFO - Memory Usage after Optimization: 1.12 MB, reduction of 25.00%
+2025-08-17 17:52:21,058 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,059 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,062 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 17:52:21,073 - __main__ - DEBUG - Column dim_dropoff_location_key changed from int64 to int32
+2025-08-17 17:52:21,076 - __main__ - INFO - Memory Usage after Optimization: 1.13 MB, reduction of 25.00%
+2025-08-17 17:52:21,078 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,081 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,083 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:52:21,087 - __main__ - DEBUG - Column dim_ratecode_key changed from int64 to int8
+2025-08-17 17:52:21,089 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.53%
+2025-08-17 17:52:21,091 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,096 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 17:52:21,098 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 17:52:21,101 - __main__ - DEBUG - Column dim_payment_type_key changed from int64 to int8
+2025-08-17 17:52:21,107 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.65%
+2025-08-17 17:52:21,110 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 17:52:21,112 - __main__ - DEBUG - Optimized dimensions created: [(2, 3), (47007, 2), (98055, 3), (98417, 3), (6, 3), (4, 3)]
+2025-08-17 18:09:01,990 - __main__ - DEBUG - Starting the ETL process
+2025-08-17 18:09:01,993 - __main__ - DEBUG - Executing function read_csv....
+2025-08-17 18:09:02,609 - __main__ - INFO - CSV file read successfully of rows 100000 and columns 19
+2025-08-17 18:09:02,627 - __main__ - DEBUG - Executing function datetime_conversion...
+2025-08-17 18:09:02,715 - __main__ - INFO - Column tpep_pickup_datetime converted to datetime
+2025-08-17 18:09:02,837 - __main__ - INFO - Column tpep_dropoff_datetime converted to datetime
+2025-08-17 18:09:02,839 - __main__ - DEBUG - Completed executing function datetime_conversion
+2025-08-17 18:09:02,841 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:02,898 - __main__ - DEBUG - Initial Memory Usage: 18.50 MB
+2025-08-17 18:09:02,907 - __main__ - DEBUG - Column VendorID changed from int64 to int8
+2025-08-17 18:09:02,914 - __main__ - DEBUG - Column passenger_count changed from int64 to int8
+2025-08-17 18:09:02,922 - __main__ - DEBUG - Column trip_distance changed from float64 to float32
+2025-08-17 18:09:02,929 - __main__ - DEBUG - Column pickup_longitude changed from float64 to float32
+2025-08-17 18:09:02,938 - __main__ - DEBUG - Column pickup_latitude changed from float64 to float32
+2025-08-17 18:09:02,944 - __main__ - DEBUG - Column RatecodeID changed from int64 to int8
+2025-08-17 18:09:02,984 - __main__ - DEBUG - Column store_and_fwd_flag changed from object to category
+2025-08-17 18:09:02,992 - __main__ - DEBUG - Column dropoff_longitude changed from float64 to float32
+2025-08-17 18:09:03,000 - __main__ - DEBUG - Column dropoff_latitude changed from float64 to float32
+2025-08-17 18:09:03,011 - __main__ - DEBUG - Column payment_type changed from int64 to int8
+2025-08-17 18:09:03,019 - __main__ - DEBUG - Column fare_amount changed from float64 to float32
+2025-08-17 18:09:03,028 - __main__ - DEBUG - Column extra changed from float64 to float32
+2025-08-17 18:09:03,036 - __main__ - DEBUG - Column mta_tax changed from float64 to float32
+2025-08-17 18:09:03,043 - __main__ - DEBUG - Column tip_amount changed from float64 to float32
+2025-08-17 18:09:03,051 - __main__ - DEBUG - Column tolls_amount changed from float64 to float32
+2025-08-17 18:09:03,058 - __main__ - DEBUG - Column improvement_surcharge changed from float64 to float32
+2025-08-17 18:09:03,067 - __main__ - DEBUG - Column total_amount changed from float64 to float32
+2025-08-17 18:09:03,071 - __main__ - INFO - Memory Usage after Optimization: 6.58 MB, reduction of 64.43%
+2025-08-17 18:09:03,073 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,074 - __main__ - DEBUG - Executing function creating_dimensions...
+2025-08-17 18:09:03,085 - __main__ - DEBUG - Dimension dim_vendor created with columns ['dim_vendor_key', 'VendorID', 'vendor_name'] of 2 rows and 3 columns
+2025-08-17 18:09:03,269 - __main__ - DEBUG - Dimension dim_datetime created with columns ['dim_datetime_key', 'full_datetime'] of 47007 rows and 2 columns
+2025-08-17 18:09:03,309 - __main__ - DEBUG - Dimension dim_pickup_location created with columns ['dim_pickup_location_key', 'pickup_latitude', 'pickup_longitude'] of 98055 rows and 3 columns
+2025-08-17 18:09:03,344 - __main__ - DEBUG - Dimension dim_dropoff_location created with columns ['dim_dropoff_location_key', 'dropoff_latitude', 'dropoff_longitude'] of 98417 rows and 3 columns
+2025-08-17 18:09:03,355 - __main__ - DEBUG - Dimension dim_ratecode created with columns ['dim_ratecode_key', 'RatecodeID', 'ratecode_description'] of 6 rows and 3 columns
+2025-08-17 18:09:03,367 - __main__ - DEBUG - Dimension dim_payment_type created with columns ['dim_payment_type_key', 'payment_type', 'payment_type_description'] of 4 rows and 3 columns
+2025-08-17 18:09:03,369 - __main__ - DEBUG - Completed executing function creating_dimensions with 6 dimensions created
+2025-08-17 18:09:03,370 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,372 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 18:09:03,375 - __main__ - DEBUG - Column dim_vendor_key changed from int64 to int8
+2025-08-17 18:09:03,378 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 8.38%
+2025-08-17 18:09:03,382 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,387 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,390 - __main__ - DEBUG - Initial Memory Usage: 0.72 MB
+2025-08-17 18:09:03,398 - __main__ - DEBUG - Column dim_datetime_key changed from int64 to int32
+2025-08-17 18:09:03,401 - __main__ - INFO - Memory Usage after Optimization: 0.54 MB, reduction of 25.00%
+2025-08-17 18:09:03,402 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,404 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,407 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 18:09:03,428 - __main__ - DEBUG - Column dim_pickup_location_key changed from int64 to int32
+2025-08-17 18:09:03,431 - __main__ - INFO - Memory Usage after Optimization: 1.12 MB, reduction of 25.00%
+2025-08-17 18:09:03,433 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,436 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,440 - __main__ - DEBUG - Initial Memory Usage: 1.50 MB
+2025-08-17 18:09:03,458 - __main__ - DEBUG - Column dim_dropoff_location_key changed from int64 to int32
+2025-08-17 18:09:03,462 - __main__ - INFO - Memory Usage after Optimization: 1.13 MB, reduction of 25.00%
+2025-08-17 18:09:03,464 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,465 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,471 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 18:09:03,474 - __main__ - DEBUG - Column dim_ratecode_key changed from int64 to int8
+2025-08-17 18:09:03,478 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.53%
+2025-08-17 18:09:03,482 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,484 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:03,488 - __main__ - DEBUG - Initial Memory Usage: 0.00 MB
+2025-08-17 18:09:03,490 - __main__ - DEBUG - Column dim_payment_type_key changed from int64 to int8
+2025-08-17 18:09:03,493 - __main__ - INFO - Memory Usage after Optimization: 0.00 MB, reduction of 10.65%
+2025-08-17 18:09:03,496 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:03,498 - __main__ - DEBUG - Optimized dimensions created: [(2, 3), (47007, 2), (98055, 3), (98417, 3), (6, 3), (4, 3)]
+2025-08-17 18:09:03,501 - __main__ - DEBUG - Executing function creating_facts.....
+2025-08-17 18:09:06,513 - __main__ - DEBUG - Fact table created with 100000 rows and 19 columns
+2025-08-17 18:09:06,529 - __main__ - DEBUG - Executing function dtype_optimization...
+2025-08-17 18:09:06,533 - __main__ - DEBUG - Initial Memory Usage: 6.58 MB
+2025-08-17 18:09:06,568 - __main__ - DEBUG - Column trip_id changed from int64 to int32
+2025-08-17 18:09:06,574 - __main__ - DEBUG - Column trip_duration_minutes changed from float64 to float32
+2025-08-17 18:09:06,577 - __main__ - INFO - Memory Usage after Optimization: 5.82 MB, reduction of 11.59%
+2025-08-17 18:09:06,579 - __main__ - DEBUG - Completed executing function dtype_optimization
+2025-08-17 18:09:06,581 - __main__ - DEBUG - Optimized facts created with shape (100000, 19)

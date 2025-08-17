@@ -99,7 +99,7 @@ dim_vendor:
 dim_vendor_key - auto increment, VendorID, vendor_description
 
 dim_datetime:
-dim_datetime_key, full_datetime, hour, minute, date, day, dayofweek, day_name, week, year, month, month_name, quarter, weekend_flag(saturday and sunday), is_holiday
+dim_datetime_key, tpep_pickup_datetime, tpep_dropoff_datetime, full_datetime, hour, date, day, dayofweek, day_name, week, year, month, month_name, quarter, weekend_flag(saturday and sunday), is_holiday
 
 dim_pickup_location:
 dim_pickup_location_key, pickup_longitude, pickup_latitude, pickup_neighborhood, zone_id, location_type("Airport", "Residential", "Downtown")
